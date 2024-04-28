@@ -4,7 +4,7 @@ const authController = require('../controllers/authController');
 
 router.post('/register', authController.registerUser);
 router.post('/login', authController.loginUser);
-
+router.post('/verify/', authController.generateVerifyToken);
 router.get('/verify/:token', authController.verifyUser);
 router.get('/forgot-password', (req, res) => {
     res.render('forgot-password',{ successMessage: req.query.success })
